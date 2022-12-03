@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire"> -->
+    <style>
+        html{
+            background: #fff;
+        }
+        .mainContainer{
+            /* background: #ffff; */
+            margin: auto;
+            display: flex;
+            border-radius: 5px;
+            margin-top: 15vh;
+            box-shadow: 5px 5px 5px rgba(0,0,0,.3),
+            -5px -5px 5px rgba(0,0,0,.3);
+            flex-direction:row;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 400px;
+            width: 700px;
+
+            /* border: 1px solid black; */
+
+        }
+        .image{
+            border-radius: 5px;
+            /* box-shadow: 1px 1px 5px rgba(0,0,0,.3); */
+            height: 380px;
+            width: 500px;
+            /* border: 1px solid black; */
+            padding-left: 10px;
+            padding-top: 20px;
+        }
+        .mainContainer>.arrow1,arrow2{
+            height: 380px;
+            width: 100px;
+            border: 1px solid black ;
+        }
+        .mainContainer>.arrowR>button{
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .mainContainer>.arrowL>button{
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .mainContainer>.arrowR>button>img{
+            /* border: 1px solid black; */
+            border-radius: 5px;
+            
+            box-shadow: 2px 2px 5px rgba(0,0,0,.3),
+            -2px -2px 5px rgba(0,0,0,.3);
+        }
+        .mainContainer>.arrowR>button>img:hover{
+            background: rgba(0,0,0,0.2);
+        }
+        .mainContainer>.arrowL>button>img:hover{
+            background: rgba(0,0,0,0.2);
+        }
+        .mainContainer>.arrowL>button>img{
+            /* border: 1px solid black; */
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,.3),
+            -2px -2px 5px rgba(0,0,0,.3);
+            transform: rotate(180deg);
+        }
+        .head{
+            font-size: 5rem;
+            text-align: center;
+            /* font-family: "Sofia", sans-serif; */
+            text-shadow: 3px 3px 3px #695d5d;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head font-effect-outline ">Gallery</h1>
+    <div class="mainContainer">
+        <div class="arrowL">
+            <button onclick="showSlides(-1)"><img src="../img/R.png" alt="" height="50px" width="50px"></button>
+        </div>
+        <div class="image">
+            <img src="../img/1.jpg" id="img1" alt="" height="350px" width="480px" >
+        </div>
+        <div class="arrowR">
+          <button onclick="showSlides(1)">  <img src="../img/R.png" alt="" height="50px" width="50px"></button>
+        </div>
+    </div>
+    <script>
+        var image=[1,2,3,4,5,6]
+        slideIndex=1;
+        function showSlides(n) {
+              
+        slideIndex+=n;
+        
+            if (slideIndex <=5 & slideIndex>=0) {
+                showImage(slideIndex)
+                
+            }else if (slideIndex<1) {
+                slideIndex=image.length-1;
+                showImage(slideIndex)
+            }
+            else{
+                slideIndex =0;
+                showImage(slideIndex)
+            }
+            function showImage(slideIndex) {
+                var images = document.getElementById("img1");
+                images.src = "../img/"+image[slideIndex]+".jpg"
+            }
+
+        //    }
+        }
+
+
+
+    </script>
+</body>
+</html>
