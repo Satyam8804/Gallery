@@ -84,13 +84,13 @@
     <h1 class="head font-effect-outline ">Gallery</h1>
     <div class="mainContainer">
         <div class="arrowL">
-            <button onclick="showSlides(-1)"><img src="../img/R.png" alt="" height="50px" width="50px"></button>
+            <button onclick="showSlides(-1)"><img src="./img/R.png" alt="" height="50px" width="50px"></button>
         </div>
         <div class="image">
-            <img src="../img/1.jpg" id="img1" alt="" height="350px" width="480px" >
+            <img src="./img/1.jpg" id="img1" alt="" height="350px" width="480px" >
         </div>
         <div class="arrowR">
-          <button onclick="showSlides(1)">  <img src="../img/R.png" alt="" height="50px" width="50px"></button>
+          <button onclick="showSlides(1)">  <img src="./img/R.png" alt="" height="50px" width="50px"></button>
         </div>
     </div>
     <script>
@@ -113,7 +113,7 @@
             }
             function showImage(slideIndex) {
                 var images = document.getElementById("img1");
-                images.src = "../img/"+image[slideIndex]+".jpg"
+                images.src = "./img/"+image[slideIndex]+".jpg"
             }
 
         //    }
